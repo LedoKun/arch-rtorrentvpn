@@ -14,14 +14,6 @@ if [[ ! -z "${pacman_packages}" ]]; then
 	pacman -S --needed $pacman_packages --noconfirm
 fi
 
-# install mediainfo from aur
-####
-# define aur packages
-aur_packages="mediainfo"
-
-# call aur install script (arch user repo) - note true required due to autodl-irssi error during install
-source /root/aur.sh
-
 # aor packages
 ####
 
@@ -35,7 +27,7 @@ pacman -S --needed $pacman_packages --noconfirm
 ####
 
 # define aur packages
-aur_packages="rutorrent autodl-irssi-community"
+aur_packages="mediainfo rutorrent autodl-irssi-community"
 
 # call aur install script (arch user repo) - note true required due to autodl-irssi error during install
 source /root/aur.sh
