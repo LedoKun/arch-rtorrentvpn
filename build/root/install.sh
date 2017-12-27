@@ -29,8 +29,30 @@ pacman -S --needed $pacman_packages --noconfirm
 # define aur packages
 aur_packages="mediainfo rutorrent autodl-irssi-community"
 
+# install base-devel
+pacman -S --needed base-devel --noconfirm
+
+# install AUR helper script
+mkdir -p /tmp/aur
+cd /tmp/aur
+git clone https://aur.archlinux.org/package-query.git
+cd package-query
+makepkg -si
+cd ..
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt
+makepkg -si
+cd /tmp
+rm -rf /tmp/aur
+
 # call aur install script (arch user repo) - note true required due to autodl-irssi error during install
-source /root/aur.sh
+yaourt -S $aur_packages --noconfirm
+
+# remove base devel excluding useful core packages
+pacman -Ru $(pacman -Qgq base-devel | grep -v awk | grep -v pacman | grep -v sed | grep -v grep | grep -v gzip | grep -v which) --noconfirm
+
+# remove cached aur packages
+rm -rf "/var/cache/${aur_helper}/" || true
 
 # github releases
 ####
