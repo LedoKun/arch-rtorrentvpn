@@ -1,4 +1,4 @@
-FROM ledokun/armhf-arch-base
+FROM ledokun/armhf-arch-openvpn
 MAINTAINER LedoKun
 
 # additional files
