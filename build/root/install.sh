@@ -7,12 +7,20 @@ set -e
 ####
 
 # define pacman packages
-pacman_packages="git nginx php-fpm rsync openssl tmux gnu-netcat mediainfo npm nodejs php-geoip ipcalc unrar"
+pacman_packages="git nginx php-fpm rsync openssl tmux gnu-netcat npm nodejs php-geoip ipcalc unrar"
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then
 	pacman -S --needed $pacman_packages --noconfirm
 fi
+
+# install mediainfo from aur
+####
+# define aur packages
+aur_packages="mediainfo"
+
+# call aur install script (arch user repo) - note true required due to autodl-irssi error during install
+source /root/aur.sh
 
 # aor packages
 ####
