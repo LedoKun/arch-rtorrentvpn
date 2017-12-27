@@ -1,3 +1,5 @@
+**Froked from [arch-rtorrentvpn](https://github.com/binhex/arch-rtorrentvpn) to create an armhf image**
+
 **Application**
 
 [rTorrent](https://github.com/rakshasa/rtorrent)  

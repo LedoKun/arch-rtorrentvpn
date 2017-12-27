@@ -1,5 +1,5 @@
-FROM binhex/arch-openvpn
-MAINTAINER binhex
+FROM ledokun/armhf-arch-base
+MAINTAINER LedoKun
 
 # additional files
 ##################
