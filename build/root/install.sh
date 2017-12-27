@@ -18,10 +18,10 @@ fi
 ####
 
 # define arch official repo (aor) packages
-aor_packages="rtorrent"
+pacman_packages="rtorrent"
 
 # call aor script (arch official repo)
-source /root/aor.sh
+pacman -S --needed $pacman_packages --noconfirm
 
 # aur packages
 ####
